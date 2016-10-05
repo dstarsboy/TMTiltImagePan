@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F7n-fw-d3Q">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Images-->
+        <scene sceneID="8Ot-a5-xvn">
+            <objects>
+                <viewController id="XMZ-H8-QKt" customClass="ViewController" customModule="TMTiltImagePan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="laK-o3-uAS"/>
+                        <viewControllerLayoutGuide type="bottom" id="klX-tt-qL6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z08-mJ-qnP">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-GS-bNQ">
+                                <frame key="frameInset"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="am0-X2-N0C">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="pQL-mq-6CT" customClass="ImageCell" customModule="TMTiltImagePan" customModuleProvider="target">
+                                        <frame key="frameInset" minX="10" minY="10" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8c6-i4-hFE">
+                                                    <frame key="frameInset"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="8c6-i4-hFE" id="t9r-d8-Ggh"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="XMZ-H8-QKt" id="OvX-9Q-Veo"/>
+                                    <outlet property="delegate" destination="XMZ-H8-QKt" id="7EC-yL-XXA"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Images" id="bHP-AN-Tm7"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ZPd-GS-bNQ" id="4wQ-PL-in6"/>
+                        <segue destination="DXM-jS-Nv7" kind="show" identifier="segueImagePan" id="N7X-H8-xTV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aKe-An-GrA" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="583"/>
+        </scene>
+        <!--Image-->
+        <scene sceneID="WHd-fY-Leb">
+            <objects>
+                <viewController id="DXM-jS-Nv7" customClass="ImageViewController" customModule="TMTiltImagePan" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nw1-Wn-GTf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tau-yK-BGC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f2P-1A-vHl">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image" id="cqj-t1-7Xn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EhB-fE-iBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="583"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="glH-Fg-iaO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F7n-fw-d3Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="mGh-SZ-bw8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XMZ-H8-QKt" kind="relationship" relationship="rootViewController" id="P4j-V4-qNU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCA-H6-SI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="584"/>
+        </scene>
+    </scenes>
+</document>
