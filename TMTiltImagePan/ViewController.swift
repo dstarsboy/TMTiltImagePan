@@ -20,9 +20,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueImagePan" {
-            if let vc = segue.destinationViewController as? ImageViewController, let indexPath = sender as? IndexPath {
+            if let vc = segue.destination as? ImageViewController, let indexPath = sender as? IndexPath {
                 let cell = collectionView.cellForItem(at: indexPath) as! ImageCell
                 vc.image = cell.imageView.image
             }

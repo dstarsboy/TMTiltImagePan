@@ -19,13 +19,13 @@ class ImagePanScrollBarView: UIView {
         let scrollBarBackgroundLayer = CAShapeLayer()
         scrollBarBackgroundLayer.path = scrollBarPath.cgPath
         scrollBarBackgroundLayer.lineWidth = 1
-        scrollBarBackgroundLayer.strokeColor = UIColor.white().withAlphaComponent(0.1).cgColor
-        scrollBarBackgroundLayer.fillColor = UIColor.clear().cgColor
+        scrollBarBackgroundLayer.strokeColor = UIColor.white.withAlphaComponent(0.1).cgColor
+        scrollBarBackgroundLayer.fillColor = UIColor.clear.cgColor
         self.layer.addSublayer(scrollBarBackgroundLayer)
         scrollBarLayer.path = scrollBarPath.cgPath
         scrollBarLayer.lineWidth = 1
-        scrollBarLayer.strokeColor = UIColor.white().cgColor
-        scrollBarLayer.fillColor = UIColor.clear().cgColor
+        scrollBarLayer.strokeColor = UIColor.white.cgColor
+        scrollBarLayer.fillColor = UIColor.clear.cgColor
         scrollBarLayer.actions = [
             "strokeStart": NSNull(),
             "strokeEnd": NSNull()
@@ -55,7 +55,7 @@ class ImagePanViewController: UIViewController {
         super.viewDidLoad()
         panningScrollView.frame = self.view.bounds
         panningScrollView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        panningScrollView.backgroundColor = UIColor.black()
+        panningScrollView.backgroundColor = UIColor.black
         panningScrollView.delegate = self
         panningScrollView.isScrollEnabled = false
         panningScrollView.alwaysBounceVertical = false
@@ -64,7 +64,7 @@ class ImagePanViewController: UIViewController {
         self.view.addSubview(panningScrollView)
         panningImageView.frame = self.view.bounds
         panningImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        panningImageView.backgroundColor = UIColor.black()
+        panningImageView.backgroundColor = UIColor.black
         panningImageView.contentMode = .scaleAspectFit
         panningScrollView.addSubview(panningImageView)
         scrollBarView.frame = self.view.bounds
