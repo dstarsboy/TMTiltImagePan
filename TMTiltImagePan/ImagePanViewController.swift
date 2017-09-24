@@ -125,7 +125,7 @@ class ImagePanViewController: UIViewController {
         return CGPoint(x: CGFloat(clampedXOffset), y: panningScrollView.contentOffset.y)
     }
     
-    func displayLinkUpdate() {
+    @objc func displayLinkUpdate() {
         let panningImageViewPresentationLayer = panningImageView.layer.presentation()!
         let panningScrollViewPresentationLayer = panningScrollView.layer.presentation()!
         let horizontalContentOffset = panningScrollViewPresentationLayer.bounds.minX
@@ -137,7 +137,7 @@ class ImagePanViewController: UIViewController {
         scrollBarView.updateWithScrollAmount(clampedXOffsetAsPercentage, scrollableWidth: scrollBarWidthPercentage, scrollableArea: scrollableAreaPercentage)
     }
     
-    func toggleMotionBasedPan() {
+    @objc func toggleMotionBasedPan() {
         isMotionBasedPanEnabled = !isMotionBasedPanEnabled
         UIView.animate(withDuration: kAnimationDuration, animations: {
                 self.updateViewsForMotionBasedPanEnabled(self.isMotionBasedPanEnabled)
@@ -160,7 +160,7 @@ class ImagePanViewController: UIViewController {
         panningScrollView.zoomScale = zoomScale
     }
     
-    func pinchGestureRecognized() {
+    @objc func pinchGestureRecognized() {
         isMotionBasedPanEnabled = false
         panningScrollView.isScrollEnabled = true
     }
